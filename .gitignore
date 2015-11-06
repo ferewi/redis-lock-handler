@@ -1,0 +1,9 @@
+### PHP Storm
+.idea/
+
+### Composer template
+bin/
+build/
+examples/
+vendor/
+
