@@ -27,12 +27,12 @@ class RedisLockHandlerTest extends PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
-        $this->redisClient =  $this->getMock('Predis\\Client', [
+        $this->redisClient =  $this->getMock('Predis\\Client', array(
             'del',
             'exists',
             'expire',
             'setnx',
-        ]);
+        ));
 
         $this->handler = new Handler\RedisLockHandler($this->redisClient);
         $this->lockable = new MyLockable('my.lock');

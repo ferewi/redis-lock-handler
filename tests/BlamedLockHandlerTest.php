@@ -23,13 +23,13 @@ class BlamedLockHandlerTest extends PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
-        $this->redisClient =  $this->getMock('Predis\\Client', [
+        $this->redisClient =  $this->getMock('Predis\\Client', array(
             'del',
             'exists',
             'expire',
             'get',
             'setnx',
-        ]);
+        ));
 
         $this->handler = new BlamedLockHandler($this->redisClient);
         $this->lockable = new MyBlamedLockable('my.lock', 'bob');
