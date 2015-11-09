@@ -2,7 +2,7 @@
 namespace Jimtonic\RedisLockHandler;
 
 
-use Jimtonic\RedisLockHandler\Handler\RedisLockHandler;
+use Jimtonic\RedisLockHandler\Handler\StandardLockHandler;
 use PHPUnit_Framework_MockObject_MockObject;
 use PHPUnit_Framework_TestCase;
 
@@ -12,9 +12,9 @@ use PHPUnit_Framework_TestCase;
  * Date: 06.11.15
  * Time: 13:48
  */
-class RedisLockHandlerTest extends PHPUnit_Framework_TestCase
+class StandardLockHandlerTest extends PHPUnit_Framework_TestCase
 {
-    /** @var  RedisLockHandler */
+    /** @var  StandardLockHandler */
     protected $handler;
 
     /** @var  PHPUnit_Framework_MockObject_MockObject */
@@ -34,7 +34,7 @@ class RedisLockHandlerTest extends PHPUnit_Framework_TestCase
             'setnx',
         ));
 
-        $this->handler = new Handler\RedisLockHandler($this->redisClient);
+        $this->handler = new Handler\StandardLockHandler($this->redisClient);
         $this->lockable = new MyLockable('my.lock');
     }
 

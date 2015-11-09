@@ -12,10 +12,10 @@ namespace Jimtonic\RedisLockHandler\Handler;
 use Jimtonic\RedisLockHandler\LockableInterface;
 
 /**
- * Class RedisLockHandler
+ * Class StandardLockHandler
  * @package Jimtonic\RedisLockHandler
  */
-class RedisLockHandler extends AbstractLockHandler
+class StandardLockHandler extends AbstractLockHandler
 {
 
     /**

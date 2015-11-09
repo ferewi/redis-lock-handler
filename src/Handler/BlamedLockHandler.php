@@ -31,6 +31,12 @@ class BlamedLockHandler extends AbstractLockHandler
         return $result == "OK" && $timeout == 1;
     }
 
+    /**
+     * Get the name of the process or user that holds the lock.
+     *
+     * @param BlamedLockableInterface $lockable
+     * @return string
+     */
     public function getLockedBy(BlamedLockableInterface $lockable)
     {
         $result = $this->client->get($lockable->getLockName());
