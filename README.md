@@ -14,5 +14,5 @@ This library provides a locking mechanism for distributed php applications based
 Add the jimtonic/redis-lock-handler package to your require section in the composer.json file.
 
 ```
-$ composer require jimtonic/redis-lock-handler
+$ composer require jimtonic/php-redis-lock-handler
 ```
